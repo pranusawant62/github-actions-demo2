@@ -1,0 +1,20 @@
+name: My First GitHub Actions Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Python Program
+        run: python3 app.py
+
+      - name: Display Success Message
+        run: echo "GitHub Actions workflow executed successfully!"
